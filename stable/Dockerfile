@@ -5,12 +5,17 @@ ENV DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update && \
     apt-get install \
-       ca-certificates \
-       curl \
-       gcc \
-       libc6-dev \
-       -qqy \
-       --no-install-recommends \
+    apt-utils \
+    ca-certificates \
+    curl \
+    gcc \
+    libc6-dev \
+    openssl \
+    pkg-config \
+    libssl-dev \
+    make \
+    -qqy \
+    --no-install-recommends \
     && rm -rf /var/lib/apt/lists/*
 
 ENV RUST_ARCHIVE=rust-1.22.1-x86_64-unknown-linux-gnu.tar.gz
